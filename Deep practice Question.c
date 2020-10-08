@@ -9,13 +9,29 @@ int main()
     for(r=0; r<5; r++)
     {
         scanf("%[^\n]s",n[r]);
-        
+        scanf("%d",&a[r]);
+        fflush(stdin);
+    }
+    for(r=0; r<5; r++)
+    {
+        for(c=0; c<4; c++)
+        {
+            if(a[c]<a[c+1])
+            {
+                t=a[c];
+                a[c]=a[c+1];
+                a[c+1]=t;
+                
                 strcpy(tm,n[c]);
                 strcpy(n[c],n[c+1]);
                 strcpy(n[c+1],tm);
             }
             
-    %s\t%d\n",n[r],a[r]);
+        }
+    }
+    for(r=0; r<5; r++)
+    {
+        printf("%s\t%d\n",n[r],a[r]);
         
     }
     
